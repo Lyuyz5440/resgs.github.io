@@ -81,7 +81,9 @@ body {
 .author-block {
   display: inline-block;
 }
-
+.venue-block {
+  display: inline-block;
+}
 .publication-banner img {
 }
 
