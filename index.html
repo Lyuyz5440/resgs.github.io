@@ -139,7 +139,15 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Page Title</title>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
 <section class="section">
   <div class="container is-max-desktop">
 
@@ -148,10 +156,10 @@
       <div class="column is-full-width">
         <h2 class="title is-3" style="margin-top: -20px">Method</h2>
 
-        <img src="./resources/image/pip.png" class="center">
+        <img src="./static/images/Overview.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            <b>Pipeline of AbsGS. </b>(a) The splat-based rendering technique projects Gaussian \( G_i \) with mean position \( \mu_{i}^{3d} \) to 2D coordinate \( \mu_{i} \) in pixel-space. The number of covered pixels by Gaussian \( G_i \) is \( m \). (b) By backpropagating, the view-space gradient \( g_i \) of Gaussian \( G_i \) under viewpoint \( k \) is calculated as the sum of all view-space gradients of pixels that are covered by \( G_i \). Since the gradients \( \frac{\partial L_j}{\partial \mu_{i}} \) have different directions, the overall sum \( g_i \) will have a small scale, which does not satisfy the gradient threshold for densification. (c) Motivated by the above analysis, we redesign the densification scheme by taking the absolute value of each component \( \lvert \frac{\partial L_j}{\partial \mu_{i,x}} \rvert \) and \( \lvert \frac{\partial L_j}{\partial \mu_{i,y}} \rvert \) before summing. This enables us to identify large Gaussians in over-reconstructed regions for split.
+            <b>Overview of our ResGS. </b>We assign initial Gaussians a temporary attribute \( l_i=0 \) for densification selection, which is discarded after training. Next, the pipeline is split into \( L \) (\( L=3 \)) stages,  with each stage trained on images downscaled using an image pyramid. Each single stage is further divided evenly into \( K\) ($K=3$) substages, for selecting Gaussians to densify. 
           </p>
         </div>
 
@@ -162,6 +170,8 @@
   </div>
 </section>
 
+</body>
+</html>
 <!-- Image carousel -->
 <!-- <section class="hero is-small">
   <div class="hero-body">
